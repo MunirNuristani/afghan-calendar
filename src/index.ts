@@ -5,13 +5,17 @@ export type {
   GregorianDate,
   MonthNames,
   DayNames,
-  FormattedDate
+  FormattedDate,
+  DateInput,
+  FormatOptions,
+  NumeralSystem,
+  MonthFormat
 } from './types';
 
 // Constants
 export { MONTH_NAMES, DAY_NAMES, DAYS_IN_MONTH } from './constants';
 
-// Conversion functions
+// Core conversion functions (backward compatible)
 export {
   shamsiToGregorian,
   gregorianToShamsi,
@@ -19,7 +23,7 @@ export {
   isLeapYear
 } from './conversion';
 
-// Utility functions
+// Utility functions (backward compatible)
 export {
   getMonthName,
   getAllMonthNames,
@@ -32,3 +36,25 @@ export {
   parseCompact,
   getMonthNumber
 } from './utils';
+
+// New flexible API
+export {
+  convert,
+  toShamsi,
+  convertBatch
+} from './convert';
+
+// Formatting utilities
+export {
+  formatShamsi,
+  formatPresets,
+  toPersianNumerals,
+  toArabicNumerals,
+  convertNumerals
+} from './format';
+
+// Parsing utilities
+export {
+  parseDate,
+  tryParseDate
+} from './parser';
